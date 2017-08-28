@@ -1,3 +1,5 @@
+import sys
+
 def sumString(string):
 	sum = 0
 	for char in string:
@@ -53,7 +55,16 @@ def xor(name):
 	
 	return sum
 	
-string = "gucio"
+if len(sys.argv) < 2:
+	print("You have to specify a username")
+	sys.exit()
+	
+string = sys.argv[1]
+
+if len(string) <= 4 or len(string) >= 17:
+	print("A len of string has to be > 4 and < 17")
+	sys.exit()
+	
 print(changeToString(multiple(string), 4),
 changeToString(add(string), 3),
 changeToString(div(string), 6),
